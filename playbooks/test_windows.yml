@@ -1,0 +1,10 @@
+---
+- name: Test running simple PowerShell script
+  hosts: win_test
+  gather_facts: false
+  tasks:
+    - name: Run script copied over to Linux
+	  script: scripts/Test-Local.ps1 -Title "{{ title }}"
+	
+	- name: Run script on the remote box
+	  win_shell: Test-Remote.ps1 -Title "{{ title }}"
