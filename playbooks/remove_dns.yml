@@ -1,0 +1,10 @@
+---
+- name: Remove DNS records
+  hosts: win_test
+  gather_facts: false
+  tasks:
+    - name: Remove CName in monad.net zone
+      win_shell: rmcn -Name {{ cname }} -Alias "{{ hostName }}.monad.net"
+      
+    - name: Remove A record in monad.net zone
+      win_shell: rma -Name {{ hostName }} -IP {{ IP }}

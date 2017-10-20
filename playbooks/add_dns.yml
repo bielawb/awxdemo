@@ -1,5 +1,5 @@
 ---
-- name: Running PowerShell remote commands
+- name: Adding DNS records
   hosts: win_test
   gather_facts: false
   tasks:
