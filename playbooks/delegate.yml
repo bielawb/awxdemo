@@ -1,0 +1,10 @@
+---
+- name: Running PowerShell remote commands
+  hosts: win_test
+  gather_facts: false
+  tasks:
+    - name: Add A record in monad.net zone
+      script: adda -Name {{ hostName }} -IP {{ IP }}
+      
+    - name: Add CName pointing to new A record
+      win_shell: addcn -Name {{ cname }} -Alias "{{ hostName }}.monad.net"
