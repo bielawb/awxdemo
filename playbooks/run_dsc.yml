@@ -1,0 +1,11 @@
+---
+- name: Run some DSC changes
+  hosts: win_test
+  gather_facts: false
+  tasks:
+    - name: Make sure that Temp folder contains PSConfAsia in root of C
+      win_dsc:
+        resource_name: File
+        destinationPath: "C:\\Temp\PSConfAsia"
+        type: Directory
+        ensure: Present
