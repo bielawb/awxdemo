@@ -6,6 +6,6 @@
     - name: Make sure that Temp folder contains PSConfAsia in root of C
       win_dsc:
         resource_name: File
-        destinationPath: "C:\\Temp\PSConfAsia"
+        destinationPath: "C:\\Temp\\PSConfAsia"
         type: Directory
         ensure: Present
